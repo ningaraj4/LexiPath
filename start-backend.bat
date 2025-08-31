@@ -1,0 +1,9 @@
+@echo off
+echo Starting LexiPath Backend Server...
+cd /d "d:\Ningaraj\AndroidStudioProjects\LexiPath\backend"
+echo Starting PostgreSQL and Redis...
+docker-compose up -d postgres redis
+timeout /t 5 /nobreak > nul
+echo Starting Go backend server...
+go run main.go
+pause
